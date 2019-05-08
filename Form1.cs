@@ -16,10 +16,12 @@ namespace Car_racing_game
         int gameSpeed = 0;
         Random r = new Random();
         int x, y;
+        int score = 0;
 
         public Form1()
         {
             InitializeComponent();
+            gameOverText.Visible = false;
         }
 
         
@@ -27,6 +29,44 @@ namespace Car_racing_game
         {
             moveline(gameSpeed);
             enemy(gameSpeed);
+            if (accident())
+            {
+                gameOverText.Visible = true;
+                gameOverText.Text += "\nScore: " + score;
+                timer1.Stop();
+            }
+
+            if (getCoin())
+            {
+                score++;
+                pictureCoin.Visible = false;
+                x = r.Next(30, 295);
+                y = -75;
+                pictureCoin.Location = new Point(x, y);
+                pictureCoin.Visible = true;
+            }
+            
+        }
+
+        bool getCoin()
+        {
+            if (pictureBoxPlayer.Bounds.IntersectsWith(pictureCoin.Bounds))
+                return true;
+            else
+                return false;
+        }
+
+        bool accident()
+        {
+            if (pictureBoxPlayer.Bounds.IntersectsWith(pictureEnemyYellow.Bounds))
+                return true;
+            if (pictureBoxPlayer.Bounds.IntersectsWith(pictureEnemyBlue.Bounds))
+                return true;
+            if (pictureBoxPlayer.Bounds.IntersectsWith(pictureEnemyWhite.Bounds))
+                return true;
+            else
+                return false;
+
         }
 
         void enemy(int speed)
@@ -58,6 +98,14 @@ namespace Car_racing_game
             else
                 pictureEnemyWhite.Top += speed;
 
+            if (pictureCoin.Top >= 500)
+            {
+                x = r.Next(30, 295);
+                y = -75;
+                pictureCoin.Location = new Point(x, y);
+            }
+            else
+                pictureCoin.Top += speed;
         }
 
         void moveline(int speed)

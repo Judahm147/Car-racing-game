@@ -41,6 +41,8 @@
             this.pictureEnemyYellow = new System.Windows.Forms.PictureBox();
             this.pictureEnemyBlue = new System.Windows.Forms.PictureBox();
             this.pictureEnemyWhite = new System.Windows.Forms.PictureBox();
+            this.gameOverText = new System.Windows.Forms.TextBox();
+            this.pictureCoin = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -51,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEnemyYellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEnemyBlue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEnemyWhite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCoin)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -118,7 +121,7 @@
             this.pictureBoxPlayer.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxPlayer.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPlayer.Image")));
-            this.pictureBoxPlayer.Location = new System.Drawing.Point(30, 311);
+            this.pictureBoxPlayer.Location = new System.Drawing.Point(96, 322);
             this.pictureBoxPlayer.Name = "pictureBoxPlayer";
             this.pictureBoxPlayer.Size = new System.Drawing.Size(59, 102);
             this.pictureBoxPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +133,7 @@
             this.pictureEnemyYellow.BackColor = System.Drawing.Color.Transparent;
             this.pictureEnemyYellow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureEnemyYellow.Image = ((System.Drawing.Image)(resources.GetObject("pictureEnemyYellow.Image")));
-            this.pictureEnemyYellow.Location = new System.Drawing.Point(50, 12);
+            this.pictureEnemyYellow.Location = new System.Drawing.Point(30, 30);
             this.pictureEnemyYellow.Name = "pictureEnemyYellow";
             this.pictureEnemyYellow.Size = new System.Drawing.Size(59, 102);
             this.pictureEnemyYellow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -142,7 +145,7 @@
             this.pictureEnemyBlue.BackColor = System.Drawing.Color.Transparent;
             this.pictureEnemyBlue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureEnemyBlue.Image = ((System.Drawing.Image)(resources.GetObject("pictureEnemyBlue.Image")));
-            this.pictureEnemyBlue.Location = new System.Drawing.Point(242, 149);
+            this.pictureEnemyBlue.Location = new System.Drawing.Point(270, 149);
             this.pictureEnemyBlue.Name = "pictureEnemyBlue";
             this.pictureEnemyBlue.Size = new System.Drawing.Size(59, 102);
             this.pictureEnemyBlue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -154,12 +157,39 @@
             this.pictureEnemyWhite.BackColor = System.Drawing.Color.Transparent;
             this.pictureEnemyWhite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureEnemyWhite.Image = ((System.Drawing.Image)(resources.GetObject("pictureEnemyWhite.Image")));
-            this.pictureEnemyWhite.Location = new System.Drawing.Point(272, 337);
+            this.pictureEnemyWhite.Location = new System.Drawing.Point(304, 394);
             this.pictureEnemyWhite.Name = "pictureEnemyWhite";
             this.pictureEnemyWhite.Size = new System.Drawing.Size(59, 102);
             this.pictureEnemyWhite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureEnemyWhite.TabIndex = 1;
             this.pictureEnemyWhite.TabStop = false;
+            // 
+            // gameOverText
+            // 
+            this.gameOverText.BackColor = System.Drawing.Color.Brown;
+            this.gameOverText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gameOverText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOverText.ForeColor = System.Drawing.Color.Black;
+            this.gameOverText.Location = new System.Drawing.Point(121, 223);
+            this.gameOverText.Name = "gameOverText";
+            this.gameOverText.Size = new System.Drawing.Size(155, 28);
+            this.gameOverText.TabIndex = 0;
+            this.gameOverText.TabStop = false;
+            this.gameOverText.Text = "Game Over";
+            this.gameOverText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pictureCoin
+            // 
+            this.pictureCoin.BackColor = System.Drawing.Color.Transparent;
+            this.pictureCoin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureCoin.Image = ((System.Drawing.Image)(resources.GetObject("pictureCoin.Image")));
+            this.pictureCoin.Location = new System.Drawing.Point(220, -34);
+            this.pictureCoin.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureCoin.Name = "pictureCoin";
+            this.pictureCoin.Size = new System.Drawing.Size(46, 49);
+            this.pictureCoin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureCoin.TabIndex = 1;
+            this.pictureCoin.TabStop = false;
             // 
             // Form1
             // 
@@ -167,7 +197,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(384, 462);
+            this.Controls.Add(this.gameOverText);
             this.Controls.Add(this.pictureEnemyWhite);
+            this.Controls.Add(this.pictureCoin);
             this.Controls.Add(this.pictureEnemyBlue);
             this.Controls.Add(this.pictureEnemyYellow);
             this.Controls.Add(this.pictureBoxPlayer);
@@ -194,7 +226,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEnemyYellow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEnemyBlue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEnemyWhite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCoin)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -211,6 +245,8 @@
         private System.Windows.Forms.PictureBox pictureEnemyYellow;
         private System.Windows.Forms.PictureBox pictureEnemyBlue;
         private System.Windows.Forms.PictureBox pictureEnemyWhite;
+        private System.Windows.Forms.TextBox gameOverText;
+        private System.Windows.Forms.PictureBox pictureCoin;
     }
 }
 
