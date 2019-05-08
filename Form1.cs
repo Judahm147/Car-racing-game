@@ -14,7 +14,8 @@ namespace Car_racing_game
     {
         Random random = new Random();
         int gameSpeed = 0;
-        
+        Random r = new Random();
+        int x, y;
 
         public Form1()
         {
@@ -24,10 +25,40 @@ namespace Car_racing_game
         
         private void timer1_Tick(object sender, EventArgs e)
         {
-            moveline(gameSpeed);            
+            moveline(gameSpeed);
+            enemy(gameSpeed);
         }
 
-        
+        void enemy(int speed)
+        {
+            if (pictureEnemyYellow.Top >= 500)
+            {
+                x = r.Next(30, 295);
+                y = -75;
+                pictureEnemyYellow.Location = new Point(x, y);
+            }
+            else
+                pictureEnemyYellow.Top += speed;
+
+            if (pictureEnemyBlue.Top >= 500)
+            {
+                x = r.Next(30, 295);
+                y = -75;
+                pictureEnemyBlue.Location = new Point(x, y);
+            }
+            else
+                pictureEnemyBlue.Top += speed;
+
+            if (pictureEnemyWhite.Top >= 500)
+            {
+                x = r.Next(30, 295);
+                y = -75;
+                pictureEnemyWhite.Location = new Point(x, y);
+            }
+            else
+                pictureEnemyWhite.Top += speed;
+
+        }
 
         void moveline(int speed)
         {
