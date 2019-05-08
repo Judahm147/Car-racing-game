@@ -14,8 +14,10 @@ namespace Car_racing_game
     {
         Random random = new Random();
         int gameSpeed = 0;
-        private Bitmap enemyImage;
-        private bool car_gone = true;
+        private Bitmap yellowEnemyImage;
+        private Bitmap whiteEnemyImage;
+        private bool yellow_car_gone = true;
+        private bool white_car_gone = true;
 
         public Form1()
         {
@@ -26,59 +28,91 @@ namespace Car_racing_game
         private void timer1_Tick(object sender, EventArgs e)
         {
             moveline(gameSpeed);
-            if (random.Next(1, 100) == 5 && car_gone)
+            if (random.Next(1, 100) == 5 && yellow_car_gone)
                 generateYellowEnemy();
+            if (random.Next(1, 500) == 5 && white_car_gone)
+                generateWhiteEnemy();
             switch (gameSpeed)
             {
                 case 0:
-                    enemyCar.Top -= 3;
+                    yellowEnemyCar.Top -= 3;
+                    whiteEnemyCar.Top -= 4;
                     break;
                 case 1:
                 case 2:
-                    enemyCar.Top -= 2;
+                    yellowEnemyCar.Top -= 2;
+                    whiteEnemyCar.Top -= 3;
                     break;
                 case 4:
                 case 3:
-                    enemyCar.Top -= 1;
+                    yellowEnemyCar.Top -= 1;
+                    whiteEnemyCar.Top -= 2;
                     break;            
                 case 5:
                 case 6:
-                    enemyCar.Top += 1;
+                    yellowEnemyCar.Top += 1;
+                    whiteEnemyCar.Top -= 1;
                     break;
                 case 7:
                 case 8:
-                    enemyCar.Top += 2;
+                    yellowEnemyCar.Top += 2;
+                    whiteEnemyCar.Top += 1;
                     break;
                 case 9:
                 case 10:
-                    enemyCar.Top += 3;
+                    yellowEnemyCar.Top += 3;
+                    whiteEnemyCar.Top += 2;
                     break;
                 default:
                     break;
             }
-            if (enemyCar.Location.Y > 429)
+            if (yellowEnemyCar.Location.Y > 429)
             {                
-                enemyCar.Visible = false;
-                car_gone = true;
+                yellowEnemyCar.Visible = false;
+                yellow_car_gone = true;
             }
-        }       
-        
-        public void generateYellowEnemy()
-        {
-            // Sets up an image object to be displayed.
-            if (enemyImage != null)
+            if (whiteEnemyCar.Location.Y > 429)
             {
-                enemyImage.Dispose();
+                whiteEnemyCar.Visible = false;
+                white_car_gone = true;
+            }
+        }
+
+        private void generateWhiteEnemy()
+        {
+            if (whiteEnemyImage != null)
+            {
+                whiteEnemyImage.Dispose();
             }
 
             // Stretches the image to fit the pictureBox.
-            enemyCar.SizeMode = PictureBoxSizeMode.StretchImage;
-            enemyImage = new Bitmap("C:\\Users\\Home\\source\\repos\\Car racing game\\Car racing game\\Images\\yellowOpponentCar.png");
-            enemyCar.ClientSize = new Size(59, 102);
-            enemyCar.SetBounds(32, -82, 59, 102);
-            enemyCar.Image = (Image)enemyImage;
-            enemyCar.Visible = true;
-            car_gone = false;
+            whiteEnemyCar.SizeMode = PictureBoxSizeMode.StretchImage;
+            whiteEnemyImage = new Bitmap("C:\\Users\\Home\\source\\repos\\Car racing game\\Car racing game\\Images\\whiteOpponentCar.png");
+            whiteEnemyCar.ClientSize = new Size(59, 102);
+            int randomOpponentPosition_X = random.Next(30, 295);
+            whiteEnemyCar.SetBounds(randomOpponentPosition_X, -82, 59, 102);
+            whiteEnemyCar.Image = (Image)whiteEnemyImage;
+            whiteEnemyCar.Visible = true;
+            white_car_gone = false;
+        }
+
+        public void generateYellowEnemy()
+        {
+            // Sets up an image object to be displayed.
+            if (yellowEnemyImage != null)
+            {
+                yellowEnemyImage.Dispose();
+            }
+
+            // Stretches the image to fit the pictureBox.
+            yellowEnemyCar.SizeMode = PictureBoxSizeMode.StretchImage;
+            yellowEnemyImage = new Bitmap("C:\\Users\\Home\\source\\repos\\Car racing game\\Car racing game\\Images\\yellowOpponentCar.png");
+            yellowEnemyCar.ClientSize = new Size(59, 102);
+            int randomOpponentPosition_X = random.Next(30, 295);
+            yellowEnemyCar.SetBounds(randomOpponentPosition_X, -82, 59, 102);
+            yellowEnemyCar.Image = (Image)yellowEnemyImage;
+            yellowEnemyCar.Visible = true;
+            yellow_car_gone = false;
         }
 
         void moveline(int speed)

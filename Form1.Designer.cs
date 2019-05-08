@@ -38,7 +38,8 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBoxPlayer = new System.Windows.Forms.PictureBox();
-            this.enemyCar = new System.Windows.Forms.PictureBox();
+            this.yellowEnemyCar = new System.Windows.Forms.PictureBox();
+            this.whiteEnemyCar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -46,7 +47,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemyCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowEnemyCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteEnemyCar)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -106,7 +108,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 25;
+            this.timer1.Interval = 5;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBoxPlayer
@@ -121,18 +123,31 @@
             this.pictureBoxPlayer.TabIndex = 1;
             this.pictureBoxPlayer.TabStop = false;
             // 
-            // enemyCar
+            // yellowEnemyCar
             // 
-            this.enemyCar.BackColor = System.Drawing.Color.Transparent;
-            this.enemyCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.enemyCar.Image = ((System.Drawing.Image)(resources.GetObject("enemyCar.Image")));
-            this.enemyCar.Location = new System.Drawing.Point(260, 37);
-            this.enemyCar.Name = "enemyCar";
-            this.enemyCar.Size = new System.Drawing.Size(59, 102);
-            this.enemyCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.enemyCar.TabIndex = 1;
-            this.enemyCar.TabStop = false;
-            this.enemyCar.Visible = false;
+            this.yellowEnemyCar.BackColor = System.Drawing.Color.Transparent;
+            this.yellowEnemyCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.yellowEnemyCar.Image = ((System.Drawing.Image)(resources.GetObject("yellowEnemyCar.Image")));
+            this.yellowEnemyCar.Location = new System.Drawing.Point(295, 12);
+            this.yellowEnemyCar.Name = "yellowEnemyCar";
+            this.yellowEnemyCar.Size = new System.Drawing.Size(59, 102);
+            this.yellowEnemyCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.yellowEnemyCar.TabIndex = 1;
+            this.yellowEnemyCar.TabStop = false;
+            this.yellowEnemyCar.Visible = false;
+            // 
+            // whiteEnemyCar
+            // 
+            this.whiteEnemyCar.BackColor = System.Drawing.Color.Transparent;
+            this.whiteEnemyCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.whiteEnemyCar.Image = ((System.Drawing.Image)(resources.GetObject("whiteEnemyCar.Image")));
+            this.whiteEnemyCar.Location = new System.Drawing.Point(81, 12);
+            this.whiteEnemyCar.Name = "whiteEnemyCar";
+            this.whiteEnemyCar.Size = new System.Drawing.Size(59, 102);
+            this.whiteEnemyCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.whiteEnemyCar.TabIndex = 1;
+            this.whiteEnemyCar.TabStop = false;
+            this.whiteEnemyCar.Visible = false;
             // 
             // Form1
             // 
@@ -140,7 +155,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(384, 462);
-            this.Controls.Add(this.enemyCar);
+            this.Controls.Add(this.whiteEnemyCar);
+            this.Controls.Add(this.yellowEnemyCar);
             this.Controls.Add(this.pictureBoxPlayer);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
@@ -162,7 +178,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemyCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowEnemyCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteEnemyCar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,7 +194,8 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBoxPlayer;
-        private System.Windows.Forms.PictureBox enemyCar;
+        private System.Windows.Forms.PictureBox yellowEnemyCar;
+        private System.Windows.Forms.PictureBox whiteEnemyCar;
     }
 }
 
