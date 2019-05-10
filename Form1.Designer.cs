@@ -41,8 +41,10 @@
             this.pictureEnemyYellow = new System.Windows.Forms.PictureBox();
             this.pictureEnemyBlue = new System.Windows.Forms.PictureBox();
             this.pictureEnemyWhite = new System.Windows.Forms.PictureBox();
-            this.gameOverText = new System.Windows.Forms.TextBox();
             this.pictureCoin = new System.Windows.Forms.PictureBox();
+            this.scoreLabel = new System.Windows.Forms.Label();
+            this.gameOverLabel = new System.Windows.Forms.Label();
+            this.endScoreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -164,20 +166,6 @@
             this.pictureEnemyWhite.TabIndex = 1;
             this.pictureEnemyWhite.TabStop = false;
             // 
-            // gameOverText
-            // 
-            this.gameOverText.BackColor = System.Drawing.Color.Brown;
-            this.gameOverText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gameOverText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameOverText.ForeColor = System.Drawing.Color.Black;
-            this.gameOverText.Location = new System.Drawing.Point(121, 223);
-            this.gameOverText.Name = "gameOverText";
-            this.gameOverText.Size = new System.Drawing.Size(155, 28);
-            this.gameOverText.TabIndex = 0;
-            this.gameOverText.TabStop = false;
-            this.gameOverText.Text = "Game Over";
-            this.gameOverText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // pictureCoin
             // 
             this.pictureCoin.BackColor = System.Drawing.Color.Transparent;
@@ -191,13 +179,50 @@
             this.pictureCoin.TabIndex = 1;
             this.pictureCoin.TabStop = false;
             // 
+            // scoreLabel
+            // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLabel.Location = new System.Drawing.Point(267, 9);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(54, 18);
+            this.scoreLabel.TabIndex = 2;
+            this.scoreLabel.Text = "Score: ";
+            // 
+            // gameOverLabel
+            // 
+            this.gameOverLabel.AutoSize = true;
+            this.gameOverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.gameOverLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOverLabel.ForeColor = System.Drawing.Color.Red;
+            this.gameOverLabel.Location = new System.Drawing.Point(119, 149);
+            this.gameOverLabel.Name = "gameOverLabel";
+            this.gameOverLabel.Size = new System.Drawing.Size(145, 29);
+            this.gameOverLabel.TabIndex = 3;
+            this.gameOverLabel.Text = "Game Over";
+            this.gameOverLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // endScoreLabel
+            // 
+            this.endScoreLabel.AutoSize = true;
+            this.endScoreLabel.BackColor = System.Drawing.Color.Transparent;
+            this.endScoreLabel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endScoreLabel.ForeColor = System.Drawing.Color.Chartreuse;
+            this.endScoreLabel.Location = new System.Drawing.Point(139, 178);
+            this.endScoreLabel.Name = "endScoreLabel";
+            this.endScoreLabel.Size = new System.Drawing.Size(54, 18);
+            this.endScoreLabel.TabIndex = 2;
+            this.endScoreLabel.Text = "Score: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(384, 462);
-            this.Controls.Add(this.gameOverText);
+            this.Controls.Add(this.gameOverLabel);
+            this.Controls.Add(this.endScoreLabel);
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.pictureEnemyWhite);
             this.Controls.Add(this.pictureCoin);
             this.Controls.Add(this.pictureEnemyBlue);
@@ -245,8 +270,10 @@
         private System.Windows.Forms.PictureBox pictureEnemyYellow;
         private System.Windows.Forms.PictureBox pictureEnemyBlue;
         private System.Windows.Forms.PictureBox pictureEnemyWhite;
-        private System.Windows.Forms.TextBox gameOverText;
         private System.Windows.Forms.PictureBox pictureCoin;
+        private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Label gameOverLabel;
+        private System.Windows.Forms.Label endScoreLabel;
     }
 }
 

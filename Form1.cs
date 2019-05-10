@@ -21,7 +21,9 @@ namespace Car_racing_game
         public Form1()
         {
             InitializeComponent();
-            gameOverText.Visible = false;
+            gameOverLabel.Visible = false;
+            endScoreLabel.Visible = false;
+            scoreLabel.Text += score;
         }
 
         
@@ -31,8 +33,10 @@ namespace Car_racing_game
             enemy(gameSpeed);
             if (accident())
             {
-                gameOverText.Visible = true;
-                gameOverText.Text += "\nScore: " + score;
+                gameOverLabel.Visible = true;
+                endScoreLabel.Visible = true;
+                endScoreLabel.Text += score;
+
                 timer1.Stop();
             }
 
@@ -44,6 +48,7 @@ namespace Car_racing_game
                 y = -75;
                 pictureCoin.Location = new Point(x, y);
                 pictureCoin.Visible = true;
+                scoreLabel.Text = "Score: " + score;
             }
             
         }
